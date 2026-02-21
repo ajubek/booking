@@ -8,9 +8,6 @@ COPY req.txt .
 RUN pip install --upgrade pip && \
     pip install -r req.txt
 
-COPY nginx/nginx.conf /etc/nginx/conf.d/
-
 COPY . /app/
 
-CMD ["uvicorn", "main:mysite", "--host", "0.0.0.0", "--port", "8000"]
-
+CMD ["uvicorn", "main:booking_app", "--host", "0.0.0.0", "--port", "8000"]
